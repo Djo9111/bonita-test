@@ -1,0 +1,6 @@
+target/
+*.log
+.env
+Thumbs.db
+app/
+.flattened-pom.xml
