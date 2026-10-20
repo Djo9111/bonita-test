@@ -2,5 +2,6 @@ target/
 *.log
 .env
 Thumbs.db
-app/
 .flattened-pom.xml
+app/h2_database/
+app/dependencies/
