@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:connectorconfiguration="http://www.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:connectorconfiguration="http://www.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:parameter="http://www.bonitasoft.org/ns/bpm/parameter" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
   <process:MainProcess xmi:id="_8w1PwMAYEfGYx5aznQe4gA" name="MonDiagramme" bonitaModelVersion="9">
     <elements xmi:type="process:Pool" xmi:id="_8w1PwcAYEfGYx5aznQe4gA" name="Demande d'habilitation">
       <elements xmi:type="process:Lane" xmi:id="_8w1PwsAYEfGYx5aznQe4gA" name="Employé (lane)" actor="_8w1P28AYEfGYx5aznQe4gA">
@@ -15,7 +15,9 @@
           <connectors xmi:type="process:Connector" xmi:id="_3WtFkMyeEfG6rcyxELhncA" name="Mail au validateur" definitionId="email" event="ON_FINISH" definitionVersion="1.3.0">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_3WtFkcyeEfG6rcyxELhncA" definitionId="email" version="1.3.0" modelVersion="9">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_3WtsoMyeEfG6rcyxELhncA" key="smtpHost">
-                <expression xmi:type="expression:Expression" xmi:id="_3WtsocyeEfG6rcyxELhncA" name="localhost" content="localhost" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_3WtsocyeEfG6rcyxELhncA" name="smtpHost()" content="smtpHost" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_z8kAEM1FEfGaR5eye_q2mg" name="smtpHost" typeClassname="java.lang.String"/>
+                </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_3WtsosyeEfG6rcyxELhncA" key="smtpPort">
                 <expression xmi:type="expression:Expression" xmi:id="_3Wtso8yeEfG6rcyxELhncA" name="1025" content="1025" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -254,6 +256,7 @@
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_8w1P28AYEfGYx5aznQe4gA" documentation="Ceci est un exemple d'acteur associé à tous les utilisateurs d'ACME" name="Employee actor" initiator="true"/>
       <actors xmi:type="process:Actor" xmi:id="_WyUpcMAeEfGYx5aznQe4gA" name="Validateur"/>
+      <parameters xmi:type="parameter:Parameter" xmi:id="_W_CoMM1CEfGaR5eye_q2mg" name="smtpHost" typeClassname="java.lang.String"/>
       <contract xmi:type="process:Contract" xmi:id="_8w1P3MAYEfGYx5aznQe4gA"/>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_8w1P3cAYEfGYx5aznQe4gA">
         <name xmi:type="expression:Expression" xmi:id="_8w1P3sAYEfGYx5aznQe4gA" content="" returnTypeFixed="true"/>

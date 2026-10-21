@@ -34,3 +34,4 @@ Le serveur Docker de test est décrit dans le dépôt Test-Bonita-BPM.
 ## Versions
 
 - v1.0-stable : flux de base, sans notification
+- v1.1 : notification mail au validateur
