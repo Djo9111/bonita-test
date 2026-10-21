@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:connectorconfiguration="http://www.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:parameter="http://www.bonitasoft.org/ns/bpm/parameter" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/bpm/configuration" xmlns:connectorconfiguration="http://www.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:parameter="http://www.bonitasoft.org/ns/bpm/parameter" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
   <process:MainProcess xmi:id="_8w1PwMAYEfGYx5aznQe4gA" name="MonDiagramme" bonitaModelVersion="9">
-    <elements xmi:type="process:Pool" xmi:id="_8w1PwcAYEfGYx5aznQe4gA" name="Demande d'habilitation">
+    <elements xmi:type="process:Pool" xmi:id="_8w1PwcAYEfGYx5aznQe4gA" name="Demande d'habilitation" version="1.1">
       <elements xmi:type="process:Lane" xmi:id="_8w1PwsAYEfGYx5aznQe4gA" name="Employé (lane)" actor="_8w1P28AYEfGYx5aznQe4gA">
         <elements xmi:type="process:StartEvent" xmi:id="_8w1Pw8AYEfGYx5aznQe4gA" name="Démarrer1" outgoing="_8w1P2MAYEfGYx5aznQe4gA">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_8w1PxMAYEfGYx5aznQe4gA" name="" content="" returnTypeFixed="true"/>
@@ -50,7 +50,7 @@
                 <expression xmi:type="expression:Expression" xmi:id="_3WtstcyeEfG6rcyxELhncA" content="" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_3WtstsyeEfG6rcyxELhncA" key="to">
-                <expression xmi:type="expression:Expression" xmi:id="_3Wtst8yeEfG6rcyxELhncA" name="validateur@test.local" content="validateur@test.local" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_3Wtst8yeEfG6rcyxELhncA" name="manager@test.local" content="manager@test.local" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_3WtsuMyeEfG6rcyxELhncA" key="bcc">
                 <expression xmi:type="expression:Expression" xmi:id="_3WtsucyeEfG6rcyxELhncA" content="" returnTypeFixed="true"/>
@@ -214,6 +214,91 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_NWTuMc1UEfGwQcDoVTjHHQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_NWTuMs1UEfGwQcDoVTjHHQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_NWTuM81UEfGwQcDoVTjHHQ" name="" content="" returnTypeFixed="true"/>
+          <connectors xmi:type="process:Connector" xmi:id="_TDM9kM1qEfGwQcDoVTjHHQ" name="Mail à la sécurité" definitionId="email" event="ON_ENTER" definitionVersion="1.3.0">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_TDM9kc1qEfGwQcDoVTjHHQ" definitionId="email" version="1.3.0" modelVersion="9">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9ks1qEfGwQcDoVTjHHQ" key="smtpHost">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9k81qEfGwQcDoVTjHHQ" name="smtpHost" content="smtpHost" type="TYPE_PARAMETER" returnTypeFixed="true">
+                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_TDM9lM1qEfGwQcDoVTjHHQ" name="smtpHost" typeClassname="java.lang.String"/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9lc1qEfGwQcDoVTjHHQ" key="smtpPort">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9ls1qEfGwQcDoVTjHHQ" name="1025" content="1025" returnType="java.lang.Integer" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9l81qEfGwQcDoVTjHHQ" key="sslSupport">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9mM1qEfGwQcDoVTjHHQ" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9mc1qEfGwQcDoVTjHHQ" key="starttlsSupport">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9ms1qEfGwQcDoVTjHHQ" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9m81qEfGwQcDoVTjHHQ" key="trustCertificate">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9nM1qEfGwQcDoVTjHHQ" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9nc1qEfGwQcDoVTjHHQ" key="authType">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9ns1qEfGwQcDoVTjHHQ" name="Basic authentication" content="Basic authentication" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9n81qEfGwQcDoVTjHHQ" key="userName">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9oM1qEfGwQcDoVTjHHQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9oc1qEfGwQcDoVTjHHQ" key="password">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9os1qEfGwQcDoVTjHHQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9o81qEfGwQcDoVTjHHQ" key="oauth2AccessToken">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9pM1qEfGwQcDoVTjHHQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9pc1qEfGwQcDoVTjHHQ" key="from">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9ps1qEfGwQcDoVTjHHQ" name="bonita@test.local" content="bonita@test.local" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9p81qEfGwQcDoVTjHHQ" key="returnPath">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9qM1qEfGwQcDoVTjHHQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9qc1qEfGwQcDoVTjHHQ" key="to">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9qs1qEfGwQcDoVTjHHQ" name="securite@test.local" content="securite@test.local" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9q81qEfGwQcDoVTjHHQ" key="bcc">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9rM1qEfGwQcDoVTjHHQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9rc1qEfGwQcDoVTjHHQ" key="cc">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9rs1qEfGwQcDoVTjHHQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9r81qEfGwQcDoVTjHHQ" key="subject">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9sM1qEfGwQcDoVTjHHQ" name="Demande d'habilitation à valider (sécurité)" content="Demande d'habilitation à valider (sécurité)" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9sc1qEfGwQcDoVTjHHQ" key="html">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9ss1qEfGwQcDoVTjHHQ" name="true" content="true" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9s81qEfGwQcDoVTjHHQ" key="message">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9tM1qEfGwQcDoVTjHHQ" name="&lt;pattern-expression>" content="&lt;p>Une demande valid&amp;eacute;e par le manager attend votre d&amp;eacute;cision.&lt;/p>&#xA;&#xA;&lt;p>Application : ${application}&lt;br />&#xA;Type d&amp;#39;acc&amp;egrave;s : ${typeAcces}&lt;br />&#xA;Justification : ${justification}&lt;/p>&#xA;" type="TYPE_PATTERN" returnTypeFixed="true">
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_TDM9tc1qEfGwQcDoVTjHHQ" name="application" content="application" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_TDM9ts1qEfGwQcDoVTjHHQ" name="application" content="application" type="TYPE_VARIABLE">
+                      <referencedElements xmi:type="process:Data" xmi:id="_TDM9t81qEfGwQcDoVTjHHQ" name="application" dataType="_8w1P8cAYEfGYx5aznQe4gA"/>
+                    </referencedElements>
+                  </referencedElements>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_TDM9uM1qEfGwQcDoVTjHHQ" name="typeAcces" content="typeAcces" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_TDM9uc1qEfGwQcDoVTjHHQ" name="typeAcces" content="typeAcces" type="TYPE_VARIABLE">
+                      <referencedElements xmi:type="process:Data" xmi:id="_TDM9us1qEfGwQcDoVTjHHQ" name="typeAcces" dataType="_8w1P8cAYEfGYx5aznQe4gA"/>
+                    </referencedElements>
+                  </referencedElements>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_TDM9u81qEfGwQcDoVTjHHQ" name="justification" content="justification" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                    <referencedElements xmi:type="expression:Expression" xmi:id="_TDM9vM1qEfGwQcDoVTjHHQ" name="justification" content="justification" type="TYPE_VARIABLE">
+                      <referencedElements xmi:type="process:Data" xmi:id="_TDM9vc1qEfGwQcDoVTjHHQ" name="justification" dataType="_8w1P8cAYEfGYx5aznQe4gA"/>
+                    </referencedElements>
+                  </referencedElements>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9vs1qEfGwQcDoVTjHHQ" key="headers">
+                <expression xmi:type="expression:TableExpression" xmi:id="_TDM9v81qEfGwQcDoVTjHHQ"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9wM1qEfGwQcDoVTjHHQ" key="charset">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9wc1qEfGwQcDoVTjHHQ" name="UTF-8" content="UTF-8" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9ws1qEfGwQcDoVTjHHQ" key="replyTo">
+                <expression xmi:type="expression:Expression" xmi:id="_TDM9w81qEfGwQcDoVTjHHQ" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_TDM9xM1qEfGwQcDoVTjHHQ" key="attachments">
+                <expression xmi:type="expression:ListExpression" xmi:id="_TDM9xc1qEfGwQcDoVTjHHQ"/>
+              </parameters>
+            </configuration>
+          </connectors>
           <operations xmi:type="expression:Operation" xmi:id="_NWTuNM1UEfGwQcDoVTjHHQ">
             <leftOperand xmi:type="expression:Expression" xmi:id="_NWTuNc1UEfGwQcDoVTjHHQ" name="approuveSecurite" content="approuveSecurite" type="TYPE_VARIABLE" returnType="java.lang.Boolean">
               <referencedElements xmi:type="process:Data" xmi:id="_VakfkM1UEfGwQcDoVTjHHQ" name="approuveSecurite" dataType="_8w1P7MAYEfGYx5aznQe4gA"/>
@@ -311,6 +396,45 @@
       <actors xmi:type="process:Actor" xmi:id="_8w1P28AYEfGYx5aznQe4gA" documentation="Ceci est un exemple d'acteur associé à tous les utilisateurs d'ACME" name="Employee actor" initiator="true"/>
       <actors xmi:type="process:Actor" xmi:id="_WyUpcMAeEfGYx5aznQe4gA" name="Manager"/>
       <actors xmi:type="process:Actor" xmi:id="_Awn1gM1TEfGwQcDoVTjHHQ" name="SecuriteDSI"/>
+      <configurations xmi:type="configuration:Configuration" xmi:id="_2jexcM1lEfGwQcDoVTjHHQ" name="Qualification" version="9" username="walter.bates">
+        <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_2jfYgM1lEfGwQcDoVTjHHQ">
+          <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_2jfYgc1lEfGwQcDoVTjHHQ" name="Employee actor">
+            <groups xmi:type="actormapping:Groups" xmi:id="_2jfYgs1lEfGwQcDoVTjHHQ"/>
+            <memberships xmi:type="actormapping:Membership" xmi:id="_2jfYg81lEfGwQcDoVTjHHQ"/>
+            <roles xmi:type="actormapping:Roles" xmi:id="_2jfYhM1lEfGwQcDoVTjHHQ"/>
+            <users xmi:type="actormapping:Users" xmi:id="_2jfYhc1lEfGwQcDoVTjHHQ">
+              <user>walter.bates</user>
+            </users>
+          </actorMapping>
+          <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_2jfYhs1lEfGwQcDoVTjHHQ" name="Manager">
+            <groups xmi:type="actormapping:Groups" xmi:id="_2jfYh81lEfGwQcDoVTjHHQ"/>
+            <memberships xmi:type="actormapping:Membership" xmi:id="_2jfYiM1lEfGwQcDoVTjHHQ"/>
+            <roles xmi:type="actormapping:Roles" xmi:id="_2jfYic1lEfGwQcDoVTjHHQ"/>
+            <users xmi:type="actormapping:Users" xmi:id="_2jfYis1lEfGwQcDoVTjHHQ">
+              <user>walter.bates</user>
+            </users>
+          </actorMapping>
+          <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_2jfYi81lEfGwQcDoVTjHHQ" name="SecuriteDSI">
+            <groups xmi:type="actormapping:Groups" xmi:id="_2jfYjM1lEfGwQcDoVTjHHQ"/>
+            <memberships xmi:type="actormapping:Membership" xmi:id="_2jfYjc1lEfGwQcDoVTjHHQ"/>
+            <roles xmi:type="actormapping:Roles" xmi:id="_2jfYjs1lEfGwQcDoVTjHHQ"/>
+            <users xmi:type="actormapping:Users" xmi:id="_2jfYj81lEfGwQcDoVTjHHQ">
+              <user>walter.bates</user>
+            </users>
+          </actorMapping>
+        </actorMappings>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_2jexcc1lEfGwQcDoVTjHHQ" type="CONNECTOR" definitionId="email" definitionVersion="1.3.0" implementationId="email-impl" implementationVersion="1.5.0"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_2jexcs1lEfGwQcDoVTjHHQ" id="CONNECTOR">
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_2jexc81lEfGwQcDoVTjHHQ" id="email-impl-1.5.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_2jexdM1lEfGwQcDoVTjHHQ" key="email-impl -- 1.5.0" value="bonita-connector-email-1.5.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_2jexdc1lEfGwQcDoVTjHHQ" key="email-impl -- 1.5.0" value="jakarta.mail-1.6.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_2jexds1lEfGwQcDoVTjHHQ" key="email-impl -- 1.5.0" value="jakarta.mail-api-1.6.7.jar" type="CONNECTOR"/>
+          </children>
+        </processDependencies>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_2jexd81lEfGwQcDoVTjHHQ" id="ACTOR_FILTER"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_2jexeM1lEfGwQcDoVTjHHQ" id="OTHER"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_2jfYkM1lEfGwQcDoVTjHHQ" name="smtpHost" value="mailpit" typeClassname="java.lang.String"/>
+      </configurations>
       <parameters xmi:type="parameter:Parameter" xmi:id="_W_CoMM1CEfGaR5eye_q2mg" name="smtpHost" typeClassname="java.lang.String"/>
       <contract xmi:type="process:Contract" xmi:id="_8w1P3MAYEfGYx5aznQe4gA"/>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_8w1P3cAYEfGYx5aznQe4gA">
