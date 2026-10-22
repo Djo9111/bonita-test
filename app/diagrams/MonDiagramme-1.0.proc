@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/bpm/configuration" xmlns:connectorconfiguration="http://www.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:parameter="http://www.bonitasoft.org/ns/bpm/parameter" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
   <process:MainProcess xmi:id="_8w1PwMAYEfGYx5aznQe4gA" name="MonDiagramme" bonitaModelVersion="9">
-    <elements xmi:type="process:Pool" xmi:id="_8w1PwcAYEfGYx5aznQe4gA" name="Demande d'habilitation" version="1.1">
+    <elements xmi:type="process:Pool" xmi:id="_8w1PwcAYEfGYx5aznQe4gA" name="Demande d'habilitation" version="1.2">
       <elements xmi:type="process:Lane" xmi:id="_8w1PwsAYEfGYx5aznQe4gA" name="Employé (lane)" actor="_8w1P28AYEfGYx5aznQe4gA">
         <elements xmi:type="process:StartEvent" xmi:id="_8w1Pw8AYEfGYx5aznQe4gA" name="Démarrer1" outgoing="_8w1P2MAYEfGYx5aznQe4gA">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_8w1PxMAYEfGYx5aznQe4gA" name="" content="" returnTypeFixed="true"/>
